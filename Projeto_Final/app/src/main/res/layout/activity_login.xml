@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+   <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:fillViewport="true"
+       android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+
+         <com.google.android.material.textfield.TextInputLayout
+             android:id="@+id/email"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:hint="Email"
+             android:textColorHint="@color/black"
+
+             app:layout_constraintTop_toTopOf="parent"
+             android:layout_marginTop="200dp"
+             android:layout_marginRight="30dp"
+             android:layout_marginLeft="30dp"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:hintTextColor="@color/black"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/email_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+
+                />
+
+         </com.google.android.material.textfield.TextInputLayout>
+
+         <com.google.android.material.textfield.TextInputLayout
+             android:id="@+id/senha"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:hint="Senha"
+             android:textColorHint="@color/black"
+             app:layout_constraintTop_toBottomOf="@id/email"
+             app:layout_constraintLeft_toLeftOf="parent"
+             android:layout_margin="30dp"
+             app:hintTextColor="@color/black"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/senha_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+         </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/recuperarSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esqueceu sua senha"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/senha"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="30dp"
+                android:textSize="16dp"
+                />
+
+         <androidx.appcompat.widget.AppCompatButton
+             android:id="@+id/btn_login"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Fazer Login"
+             android:background="#50e95e"
+             android:textColor="@color/white"
+             app:layout_constraintTop_toBottomOf="@id/recuperarSenha"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             android:layout_margin="30dp"
+             />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.core.widget.NestedScrollView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/icon_home"
+        android:iconTint="@color/white"
+        
+        />
+    <item android:id="@+id/trilhas"
+       android:title="Trilhas"
+        android:icon="@drawable/icon_terrain"
+        android:iconTint="@color/white"
+        />
+    <item android:id="@+id/comunidades"
+        android:title="Comunidades"
+        android:icon="@drawable/ic_group"
+        android:iconTint="@color/white"
+        />
+    <item android:id="@+id/config"
+        android:title="Configuração"
+        android:icon="@drawable/icon_settings"
+        android:iconTint="@color/white"
+        />
+
+</menu>
