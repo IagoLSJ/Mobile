@@ -1,5 +1,6 @@
 package com.projeto.projeto_final.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,14 +9,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.projeto.projeto_final.R;
+import com.projeto.projeto_final.controller.UserController;
+import com.projeto.projeto_final.model.User;
 
 public class Login extends AppCompatActivity {
     Button btn;
-    TextInputEditText email, senha;
-    TextView recSenha;
+    private TextInputEditText email, senha;
+    private TextView recSenha;
+    private UserController controller = new UserController();
+    FirebaseAuth userAuth = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +35,9 @@ public class Login extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(main);
+              if(controller.login(email.getText().toString().toLowerCase(),senha.getText().toString())){
+                  startActivity(new Intent(getApplicationContext(),MainActivity.class));
+              }
             }
         });
     }

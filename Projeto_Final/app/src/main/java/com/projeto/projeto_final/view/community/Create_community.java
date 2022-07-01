@@ -20,14 +20,13 @@ public class Create_community extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_community);
         carregar();
-        CommunityController controller = new CommunityController();
+        CommunityController controller =  CommunityController.getInstance();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent communityview = new Intent(getApplicationContext(), Community.class);
-                Comunidade c = new Comunidade(controller.idGenerete(),"drawable/montanha.png", "drawable/ciclista_64.png", nome.toString(), descricao.toString());
+                Comunidade c = new Comunidade("drawable/montanha.png", "drawable/ciclista_64.png", nome.getText().toString(), descricao.getText().toString());
                 controller.createCommunity(c);
-                communityview.putExtra("communityId", c.getId());
                 startActivity(communityview);
 
 

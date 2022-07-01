@@ -5,38 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.community.Community_Main">
-
-
-
+    tools:context=".view.settings.Settings">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navegation"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#e89d10"
+        app:itemBackground="@color/white"
+        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navegation_menu"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_community"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navegation"
-
-        />
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/create_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navegation"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/icon_group_add"
-        />
+        app:menu="@menu/bottom_navegation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

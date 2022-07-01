@@ -28,19 +28,14 @@ public class TelaCarregamento extends AppCompatActivity {
             startActivity(registrationView);
         });
 
-        gmail.setOnClickListener(view ->{
-            Intent main = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(main);
-        });
     }
     public void carregar(){
         view = findViewById(R.id.view);
-        gmail = findViewById(R.id.gmail);
         cadastrar = findViewById(R.id.btn_cadastrar);
         login = findViewById(R.id.btn_login);
 
         view.setVisibility(View.VISIBLE);
-        gmail.setVisibility(View.VISIBLE);
+
         cadastrar.setVisibility(View.VISIBLE);
         login.setVisibility(View.VISIBLE);
 

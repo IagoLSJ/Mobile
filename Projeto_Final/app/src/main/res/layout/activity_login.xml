@@ -14,55 +14,79 @@
 
 
          <com.google.android.material.textfield.TextInputLayout
-             android:id="@+id/email"
-             android:layout_width="match_parent"
+             android:id="@+id/outlined_text_input_layout_email"
+             android:textColorHint="@color/black"
+             app:layout_constraintTop_toBottomOf="@id/outlined_text_input_layout_email"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+             android:theme="@style/EditTextThemeOverlay"
+             android:layout_width="0dp"
              android:layout_height="wrap_content"
              android:hint="Email"
-             android:textColorHint="@color/black"
-
-             app:layout_constraintTop_toTopOf="parent"
-             android:layout_marginTop="200dp"
-             android:layout_marginRight="30dp"
-             android:layout_marginLeft="30dp"
-             app:layout_constraintLeft_toLeftOf="parent"
              app:hintTextColor="@color/black"
-             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+             app:helperText="OutlinedBox helper helper"
+             app:helperTextTextAppearance="@style/HelperTextAppearance"
+             app:boxStrokeColor="@color/verde_limao"
+             app:errorTextAppearance="@style/ErrorTextAppearance"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             android:layout_marginTop="50dp"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             >
 
             <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/email_input"
+                android:id="@+id/email_input"
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/black"
-                android:inputType="textEmailAddress"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="20dp"
                 android:textColor="@color/black"
-
-                />
+                android:textColorHint="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColorHighlight="@color/textColorHighlight" />
+            />
 
          </com.google.android.material.textfield.TextInputLayout>
 
          <com.google.android.material.textfield.TextInputLayout
              android:id="@+id/senha"
-             android:layout_width="match_parent"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+             android:theme="@style/EditTextThemeOverlay"
+             android:layout_width="0dp"
              android:layout_height="wrap_content"
+             app:hintTextColor="@color/black"
+             app:helperText="OutlinedBox helper helper"
+             app:helperTextTextAppearance="@style/HelperTextAppearance"
+             app:boxStrokeColor="@color/verde_limao"
+             app:errorTextAppearance="@style/ErrorTextAppearance"
              android:hint="Senha"
              android:textColorHint="@color/black"
-             app:layout_constraintTop_toBottomOf="@id/email"
+             app:layout_constraintTop_toBottomOf="@id/outlined_text_input_layout_email"
              app:layout_constraintLeft_toLeftOf="parent"
-             android:layout_margin="30dp"
-             app:hintTextColor="@color/black"
-             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+             app:layout_constraintRight_toRightOf="parent"
+             android:layout_margin="20dp"
+             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/senha_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:singleLine="false"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="20dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColorHighlight="@color/textColorHighlight" />
+            android:inputType="textPassword"
+            />
 
          </com.google.android.material.textfield.TextInputLayout>
-            <TextView
+
+         <TextView
                 android:id="@+id/recuperarSenha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,5 +111,6 @@
              app:layout_constraintRight_toRightOf="parent"
              android:layout_margin="30dp"
              />
+
       </androidx.constraintlayout.widget.ConstraintLayout>
    </androidx.core.widget.NestedScrollView>

@@ -10,10 +10,14 @@ import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.projeto.projeto_final.R;
+import com.projeto.projeto_final.controller.UserController;
+import com.projeto.projeto_final.model.User;
 
 public class Registration extends AppCompatActivity {
     Button btn;
     TextInputEditText email, senha, nome, sobrenome, genero, datanascimento;
+    private UserController controller = new UserController();
+    private User user ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +25,9 @@ public class Registration extends AppCompatActivity {
         carregar();
 
         btn.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+            user = new User( "https://avatars.githubusercontent.com/u/62673830?v=4",  nome.getText().toString(),  sobrenome.getText().toString(),  datanascimento.getText().toString(),  genero.getText().toString(),  email.getText().toString().toLowerCase(),  senha.getText().toString());
+            controller.criateUser(user);
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
 
     }

@@ -3,20 +3,19 @@ package com.projeto.projeto_final.model;
 import java.util.ArrayList;
 
 public class Comunidade {
-    private int id;
+
     private String urlImageMural;
     private String urlImage;
     private String nome;
-    private String descrição;
+    private String describe;
     private User criador;
     private ArrayList<User> menbros = new ArrayList<>();
 
-    public Comunidade(int id, String urlImageMural, String urlImage, String nome, String descrição) {
-        this.id = id;
+    public Comunidade(String urlImageMural, String urlImage, String nome, String describe) {
         this.urlImageMural = urlImageMural;
         this.urlImage = urlImage;
         this.nome = nome;
-        this.descrição = descrição;
+        this.describe = describe;
 
     }
 
@@ -45,12 +44,12 @@ public class Comunidade {
         this.nome = nome;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescribe() {
+        return describe;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 
     public User getCriador() {
@@ -60,5 +59,17 @@ public class Comunidade {
     public void setCriador(User criador) {
         this.criador = criador;
     }
-    public int getId(){return this.id;}
+
+
+    @Override
+    public String toString() {
+        return "Comunidade{" +
+                ", urlImageMural='" + urlImageMural + '\'' +
+                ", urlImage='" + urlImage + '\'' +
+                ", nome='" + nome + '\'' +
+                ", describe='" + describe + '\'' +
+                ", criador=" + criador +
+                ", menbros=" + menbros +
+                '}';
+    }
 }

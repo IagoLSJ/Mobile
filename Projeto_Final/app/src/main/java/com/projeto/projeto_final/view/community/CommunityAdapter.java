@@ -15,10 +15,10 @@ import com.projeto.projeto_final.model.Comunidade;
 import java.util.List;
 
 public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.viewHolderCommunity> {
-    private List<Comunidade> comunidadeList;
+    private List<Comunidade> comunidades;
 
-    public CommunityAdapter(List<Comunidade> comunidadeList) {
-        this.comunidadeList = comunidadeList;
+    public CommunityAdapter(List<Comunidade> dados) {
+        this.comunidades = dados;
     }
 
     @NonNull
@@ -34,10 +34,10 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.view
 
     @Override
     public void onBindViewHolder(@NonNull viewHolderCommunity holder, int position) {
-        if((comunidadeList != null) && (comunidadeList.size() > 0)){
-            Comunidade comunidade = comunidadeList.get(position);
+        if((comunidades != null) && (comunidades.size() > 0)){
+            Comunidade comunidade = comunidades.get(position);
             holder.communityName.setText(comunidade.getNome());
-            holder.communityDescription.setText(comunidade.getDescrição());
+            holder.communityDescription.setText(comunidade.getDescribe());
 
 
         }
@@ -45,7 +45,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.view
 
     @Override
     public int getItemCount() {
-        return comunidadeList.size();
+        return comunidades.size();
     }
 
     public class viewHolderCommunity extends RecyclerView.ViewHolder{
